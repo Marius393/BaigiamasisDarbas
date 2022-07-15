@@ -18,9 +18,10 @@ function createInputObject() {
     const formData = {
         usersName:usersName.value,
         usersSurname:usersSurname.value,
-        usersEmail:usersEmail.value,
         usersAge:usersAge.value,
-    };
+        usersEmail:usersEmail.value,
+        
+    }
     return formData;
 }
 async function login(formDataString) {
@@ -31,7 +32,6 @@ async function login(formDataString) {
         },
         body: formDataString
     })
-    console.log(result)
     if (result.ok) {
         window.location.replace("http://127.0.0.1:9000/users.html");  
     } else {
