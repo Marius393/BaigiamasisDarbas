@@ -10,30 +10,45 @@ const usersAge = document.querySelector('input[name="Age"]');
 addBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const formData = createInputObject();
-    const formDataString = JSON.stringify(formData);
-    login(formDataString);
+    login(formData);
 });
 
 function createInputObject() {
     const formData = {
-        usersName:usersName.value,
-        usersSurname:usersSurname.value,
-        usersAge:usersAge.value,
-        usersEmail:usersEmail.value   
+        usersName: usersName.value,
+        usersSurname: usersSurname.value,
+        usersAge: usersAge.value,
+        usersEmail: usersEmail.value
     }
     return formData;
 }
-async function login(formDataString) {
-   const result = await fetch('http://127.0.0.1:9000/users', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: formDataString
-    })
-    if (result.ok) {
-        window.location.replace("http://127.0.0.1:9000/users.html");  
-    } else {
-        alert('Blogai');
+
+async function login(data) {
+
+    if (
+        data.usersName !== ''
+        && data.usersSurname !== ''
+        && data.usersEmail !== ''
+        && data.usersName.length > 2
+        && data.usersSurname.length > 2
+        && data.usersEmail.indexOf('@') > -1
+        && data.usersAge > 0
+    ) {
+        const formDataString = JSON.stringify(data)
+        const result = await fetch('http://127.0.0.1:9000/users', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: formDataString
+        })
+        if (result.ok) {
+            window.location.replace("http://127.0.0.1:9000/users.html");
+        } else {
+            alert('Blogai');
+        }
+    }
+    else {
+        alert('Klaidingai įrašyti duomenys')
     }
 }

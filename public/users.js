@@ -1,8 +1,3 @@
-// const usersName = document.getElementById('name');
-// const usersSurname = document.getElementById('surname');
-// const usersEmail = document.getElementById('email');
-// const usersAge = document.getElementById('age');
-
 async function fromDb() {
     const result = await fetch('http://127.0.0.1:9000/users')
 
@@ -17,7 +12,6 @@ async function fromDb() {
         const cards = document.querySelector('div.cards');
         const deletebtn = document.createElement('button');
         const editbtn = document.createElement('button');
-
 
         cards.appendChild(card);
         card.appendChild(np).innerHTML = name + ' ' + surname;
@@ -70,20 +64,16 @@ async function fromDb() {
                 } else {
                     alert('Klaidingai įrašyti duomenys')
                 }
-                
             })
             np.id = 'name'
             ln.id = 'surname'
             howOld.id = 'age'
             mail.id = 'email'
             mail.type = 'email'
-
-
         })
     });
 }
 fromDb()
-
 
 async function btDelete(users_id) {
     const url = 'http://127.0.0.1:9000/users/' + users_id
@@ -141,8 +131,6 @@ async function editDb() {
         np.id = 'name'
         howOld.id = 'age'
         mail.id = 'email'
-
-
     });
 }
 

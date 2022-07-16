@@ -41,7 +41,6 @@ app.post('/users', (request, response) => {
   });
 });
 
-
 app.get('/users', (request, response) => {
   client.connect(async () => {
     const database = client.db('BaigiamasisDarbas');
@@ -89,5 +88,4 @@ app.put('/users', (req, res) => {
       }
     }
   });
-
 });
