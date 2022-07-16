@@ -24,7 +24,6 @@ function createInputObject() {
 }
 
 async function login(data) {
-
     if (
         data.usersName !== ''
         && data.usersSurname !== ''
