@@ -69,8 +69,6 @@ async function fromDb() {
                     document.location.reload()
                 } else {
                     alert('Klaidingai įrašyti duomenys')
-                   
-            
                 }
                 
             })

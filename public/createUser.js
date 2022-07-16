@@ -19,8 +19,7 @@ function createInputObject() {
         usersName:usersName.value,
         usersSurname:usersSurname.value,
         usersAge:usersAge.value,
-        usersEmail:usersEmail.value,
-        
+        usersEmail:usersEmail.value   
     }
     return formData;
 }

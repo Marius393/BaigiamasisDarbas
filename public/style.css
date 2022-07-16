@@ -13,7 +13,7 @@
 
 label {
     width: 200px;
-    font-size: 20px;
+    font-size: 25px;
     margin: auto;
 }
 
@@ -66,7 +66,7 @@ button#submit {
 a {
     text-decoration: none;
     color: black;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .content {
@@ -95,8 +95,7 @@ button {
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 30px;
-    width: 150px;
-    margin: auto;   
+    width: 150px;  
 }
 
 .cards {
@@ -156,9 +155,10 @@ button {
 
 .btn {
     display: flex;
-    margin-top: 20px;
-    margin-left: 35%;
-    margin-right: 35%;
+    /* margin-top: 20px;
+    margin-left: 40%;
+    margin-right: 40%; */
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
